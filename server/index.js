@@ -5,9 +5,8 @@ const app = express()
 const cache = apicache.middleware
 const { proxyReq, proxyDelay } = require('./proxy')
 
-// app.use('/api', cache('5 minutes'), proxyDelay, proxyReq)
+app.use('/api', cache('5 minutes'), proxyDelay, proxyReq)
 app.use(express.json())
-app.use('/api', proxyDelay, proxyReq)
 app.listen(8000)
 
 /***/
