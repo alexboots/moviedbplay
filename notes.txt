@@ -1,0 +1,40 @@
+TODO:
+
+Basic app:
+[] add basic theme
+[] add react router
+  [] add basic routes
+    [] /
+    [] /movie/:page
+    [] add burger menu at the side with all routes (home / lol nothing else I guess)
+[] create list item section
+  [] create movie list item
+  [] create card item
+[] add popular section on homepage
+  [] add popular API
+[] Add search bar
+[] Search bar
+  => search resp
+  => replaces 'popular section'
+  => obviously trnasitionar load state to its obvius UI is being replaced
+  => Maybe have 'Popular' scroll 'up' off the page (in that section) and replace it with 'Search'
+    => almost like IOs scroll select input UI sort of vibe kinda sorta
+[] 'toggle' view from list to card view
+  [] make card view for homepage
+  [] not to self: make sure images set height and witdh to no weird resizing issue on loading
+
+Probably don't have time stretch goals:
+[] add infinite scroll w react-virtualized for loading more (homepage / wherever)
+  => actually maybe use this for sake of simplicity https://github.com/CassetteRocks/react-infinite-scroller
+  https://github.com/jaredpalmer/react-simple-infinite-scroll
+[] create page that shows films by genre
+  [] have 'left / right' scroll through each section google style
+  [] 'see more' click to expand, takes you to seperate gerne page w infinite scroll
+[] Add filtering by genre to search - maybe a select / options OR radio input under the search bar with 'name, genre, whatever else'
+[] Show related movies
+[] Add a page for individual actor details
+[] Add a caching layer for your requests to the 3rd party API (not super needed if we throttle req + useSWR on frontend)
+
+
+Libs:
+https://github.com/chenglou/react-motion
