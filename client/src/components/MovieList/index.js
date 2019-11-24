@@ -1,5 +1,6 @@
 import React from 'react'
 
-export const MovieList = (props) => {
+export const MovieList = ({ list }) => {
+
   return (<div>MovieList</div>)
 }

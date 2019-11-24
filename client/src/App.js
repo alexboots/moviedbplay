@@ -1,18 +1,10 @@
-import React, { useEffect, useReducer } from 'react'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useHistory,
-} from "react-router-dom"
+import React, { Suspense } from 'react'
+import { Link } from "react-router-dom"
 
 import useSWR, { SWRConfig, trigger }from 'swr'
 import { fetcher } from './fetcher'
 
-import { Home } from './Home'
-import { MovieList } from './MovieList'
-import { MoviePage } from './MoviePage'
+import { Router } from './Router'
 
 export const App = () => {
   return(
@@ -21,34 +13,21 @@ export const App = () => {
         refreshInterval: 0,
         revalidateOnFocus: false,
         fetcher,
+        suspense: true,
       }}
     >
-      <div style={{background: 'pink'}}>
+      <Suspense fallback={<div>Loading...</div>}>
         <Router>
-          <div>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/movie/:slug">movie</Link>
-              </li>
-            </ul>
-
-            <hr />
-
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route path="/movie/:slug">
-                <MoviePage />
-              </Route>
-            </Switch>
-
-          </div>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/movie/:slug">movie</Link>
+            </li>
+          </ul>
         </Router>
-      </div>
+        </Suspense>
     </SWRConfig>
   )
 }
@@ -56,18 +35,18 @@ export const App = () => {
 // const What = () => {
 //   const { data, error } = useSWR('/api/movie/550')
 //   console.log('data', data)
-// 
+
 //   return (<div onClick={() => {trigger('/api/movie/550')}}>hi</div>)
 // }
-// 
+
 // const Popular = () => {
 //   const { data, error, isValidating } = useSWR('/api/movie/popular')
 //   console.log('data', data)
 //   console.log('isValidating', isValidating)
-// 
+
 //   return (<div>2hi</div>)
 // }
-// 
+
 // function App() {
 //   return (
 //     <SWRConfig
