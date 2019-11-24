@@ -1,8 +1,29 @@
 const httpProxy = require('http-proxy-middleware')
-const { BASE_URL, TOKEN } = require('./constants')
+const { MOVIE_DB_API_URL, TOKEN } = require('./constants')
+
+let lastReqTime = null
+let timeout = null
+const proxyDelay = function(req, res, next) {
+  const delay = 256;
+  const lastReqTimePlusDelay = lastReqTime + delay
+  const currentTime = Date.now()
+  const delayNeeded = lastReqTimePlusDelay - currentTime;
+  clearTimeout(timeout)
+
+  // Delay API request if one has happened within last 256 millisecons
+  if(lastReqTime && (lastReqTimePlusDelay > currentTime)) {
+    timeout = setTimeout(() => {
+      lastReqTime = Date.now()
+      next()
+    }, delayNeeded)
+  } else {
+    lastReqTime = Date.now()
+    next()
+  }
+}
 
 const proxyReq = httpProxy({
-  target: 'http://api.themoviedb.org/3',
+  target: MOVIE_DB_API_URL,
   changeOrigin: true,
   logLevel: 'debug',
   pathRewrite: function (path, req) {
@@ -14,27 +35,7 @@ const proxyReq = httpProxy({
   },
 })
 
-let lastReqTime = null
-let timeout = null
-const proxyDelay = function(req, res, next) {
-  const delay = 256;
-  const lastReqTimePlusDelay = lastReqTime + delay
-  const currentTime = Date.now()
-  clearTimeout(timeout)
-
-  // Delay API request if one has happened within last 256 millisecons
-  if(lastReqTime && (lastReqTimePlusDelay > currentTime)) {
-    timeout = setTimeout(() => {
-      lastReqTime = Date.now()
-      next()
-    }, delay)
-  } else {
-    lastReqTime = Date.now()
-    next()
-  }
-}
-
 module.exports = {
+  proxyDelay,
   proxyReq,
-  proxyDelay
 }
