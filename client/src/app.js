@@ -1,9 +1,9 @@
 import React, { Suspense } from 'react'
-import { Link } from "react-router-dom"
-
+import { Link } from 'react-router-dom'
 import useSWR, { SWRConfig, trigger }from 'swr'
 import ErrorBoundary from 'components/Error/Boundary'
-import { fetcher } from './fetcher'
+import { Loader } from 'components/shared/Loader'
+import { fetcher } from './utils/fetcher'
 
 import { Router } from './Router'
 
@@ -18,16 +18,18 @@ export const App = () => {
           suspense: true,
         }}
       >
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Loader />}>
           <Router>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/movie/:slug">movie</Link>
-              </li>
-            </ul>
+            {/* <menu> */}
+            {/*   <ul> */}
+            {/*     <li> */}
+            {/*       <Link to="/">Home</Link> */}
+            {/*     </li> */}
+            {/*     <li> */}
+            {/*       <Link to="/movie/:slug">movie</Link> */}
+            {/*     </li> */}
+            {/*   </ul> */}
+            {/* </menu> */}
           </Router>
           </Suspense>
       </SWRConfig>

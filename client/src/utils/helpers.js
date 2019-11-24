@@ -1,0 +1,1 @@
+export const joinQuery = (url) => url.includes('?') ? '&' : '?'

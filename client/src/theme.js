@@ -54,6 +54,9 @@ export const theme = {
     wash: '#FFEDF6',
     border: '#FFCCE5',
   },
+  color: {
+    white: '#ffffff'
+  }
 };
 
 export default theme;

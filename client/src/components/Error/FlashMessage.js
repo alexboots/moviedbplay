@@ -1,14 +1,17 @@
 import React from 'react'
 import FlashMessage from 'react-flash-message'
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 import theme from 'theme'
 
-const ErrorBanner = styled.div`
+const ErrorBanner = styled(motion.div)`
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 30px;
+  right: 30px;
   height: 120px;
+  width: 400px;
+  padding: 18px;
+  border-radius: 30px;
   border: 1px solid ${theme.warn.default};;
   background-color: ${theme.warn.default};
   color: ${theme.warn.wash};
@@ -18,20 +21,22 @@ const ErrorBanner = styled.div`
   align-items: center;
 `;
 
-console.log('theme', theme);
-export const FlashError = ({message}) => (
+export const FlashError = ({message, error}) => (
   <FlashMessage
-    duration={3000}
+    duration={5000}
   >
-    <ErrorBanner>
-      <h3>
+    <ErrorBanner
+      animate={{ scale: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <h4>
         Something went wrong :(
-      </h3>
+      </h4>
       <div>
-        Message: {message.status_message}
+        Message: {message.status_message} Status Code: {message.status_code}
       </div>
       <div>
-        Status Code: {message.status_code}
+        {error}
       </div>
     </ErrorBanner>
   </FlashMessage>
