@@ -28,7 +28,8 @@ const proxyReq = httpProxy({
   logLevel: 'debug',
   pathRewrite: function (path, req) {
     // append every request with the api key
-    return `${path.replace('/api/', '')}?api_key=${TOKEN}`
+    const appendTokenChar = path.includes('?') ? '&' : '?'
+    return `${path.replace('/api/', '')}${appendTokenChar}api_key=${TOKEN}`
   },
   onError: function (error, req, res){
     res.status(500).json({ message: 'Something went wrong', error })
