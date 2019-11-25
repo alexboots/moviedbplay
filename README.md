@@ -1,6 +1,6 @@
 ## Start app
 
-### Development
+# Development
 
 The client and server must be started up seperatly. First, start the server:
 
@@ -17,3 +17,6 @@ The frontend is using create-react-app which sproxies all requests to the API. S
 ### Production
 
 There is currently no production build
+
+![](index.png)
+![](page.png)
