@@ -1,8 +1,19 @@
 ## Start app
 
-In the project directory, you can run:
+### Development
 
-### `yarn install && yarn start` or `npm run start && npm run install`
+The client and server must be started up seperatly. First, start the server:
 
+## server
+cd into `/server` and run `yarn && yarn start` or `npm install && npm run start`
 
-I tried to keep this simple so there isn't any production build / host setup. 
+Next, we need to start the client:
+
+## client
+cd into `/client` and run `yarn && yarn start` or `npm install && npm run start`
+
+The frontend is using create-react-app which sproxies all requests to the API. See package.json to change API port. 
+
+### Production
+
+There is currently no production build

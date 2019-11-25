@@ -72,7 +72,7 @@ export const MovieList = ({ requestUrl = '/api/movie/popular' }) => {
   }
 
   if(state.moviesList.length === 0) {
-    return <h3>No movies found</h3>
+    return <h3 style={{marginLeft: '120px'}}>No movies found</h3>
   }
 
   return (

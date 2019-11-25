@@ -34,6 +34,9 @@ const DetailsMain = styled.section`
     text-align: center;
     flex: 1;
   }
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
 `
 const pillStyle = css`
   /*padding: 30px;*/

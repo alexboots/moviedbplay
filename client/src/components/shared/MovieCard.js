@@ -39,7 +39,7 @@ const CardImage = styled(motion.div)`
   display: block;
   img {
     height: 220px;
-    border-radius: 30px;
+    border-radius: 12px;
   }
 `
 
