@@ -3,9 +3,9 @@
 # Development
 
 ## Clone
-Clone the app to locally: `git clone https://github.com/alexboots/moviedbplay.git`
+Clone the app locally: `git clone https://github.com/alexboots/moviedbplay.git`
 
-The client and server must be started up seperatly. First, start the server:
+The client and server must be started up seperatly. First, `cd moviedbplay` and start the server:
 
 ## server
 cd into `/server` and run `yarn && yarn start` or `npm install && npm run start`
