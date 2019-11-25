@@ -10,22 +10,32 @@ const Title = styled.header`
   background: white;
   margin-left: -30px;
   margin-top: -130px;
+
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
 `
 
 const DetailsSection = styled.section`
   background: ${theme.bg.default};
   position: relative;
   width: 70%;
-  height: 34vh;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  height: 130px;
+  margin-left: 10%;
+  margin-top: -110px;
   border-radius: 18px;
   padding: 30px;
+
+  @media (max-width: 1000px) {
+    width: 80%;
+    margin-left: 0%;
+    height: 190px;
+  }
 `
 
 const DetailsMain = styled.section`
   padding: 0 120px;
-  margin-top: -32vh;
+  margin-top: -20px;
   position: relative;
   z-index: 999;
   display: flex;

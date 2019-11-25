@@ -15,7 +15,6 @@ import NoHeadshot from './NoHeadshot.png'
   border-radius: 18px;
 `
 export const PersonCards = styled.section`
-  min-width: 80%;
   min-height: 200px;
   display: flex;
   background-color: ${theme.generic.alt};
