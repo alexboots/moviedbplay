@@ -51,3 +51,9 @@ export const Pagination = ({ dispatch, totalPages, currentPage }) => (
     }
   </PaginationWrap>
 )
+
+Pagination.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  totalPages: PropTypes.number,
+  currentPage: PropTypes.number,
+}

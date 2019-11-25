@@ -39,7 +39,7 @@ export const FlashError = ({message, error}) => (
         </div>
       }
       <div>
-        {error}
+        {error && error}
       </div>
     </ErrorBanner>
   </FlashMessage>

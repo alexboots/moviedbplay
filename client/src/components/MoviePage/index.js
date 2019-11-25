@@ -1,5 +1,4 @@
 import React, { Suspense } from 'react'
-import PropTypes from 'prop-types'
 import useSWR from 'swr'
 import { useParams, Link } from 'react-router-dom'
 import { FlashError } from 'components/Error/FlashMessage'
@@ -9,12 +8,6 @@ import { IMG_URL_ORIGINAL } from 'utils/constants'
 
 import { BannerImg, BackButton } from './styles'
 import { Details } from './Details'
-
-import {
-  MovieCardGrid,
-  MovieCard,
-  MovieCardTitle,
-} from 'components/shared/MovieCard'
 
 import {
   PersonCardsTitle,
@@ -27,7 +20,7 @@ const MoviePage = () => {
   const appendToResponse = encodeURIComponent('credits,reviews')
 
   const { data: movie, error } = useSWR(`/api/movie/${params.movieId}?append_to_response=${appendToResponse}`)
-  if(error || movie && movie.status_code) {
+  if(error || (movie && movie.status_code)) {
     return <FlashError message={movie} error={error} />
   }
 
@@ -87,8 +80,8 @@ const MoviePage = () => {
         <section>
           <PersonCardsTitle>Crew</PersonCardsTitle>
           <PersonCards>
-            {credits.crew.map(member => (
-              <PersonCard key={member.name} member={member} />
+            {credits.crew.map((member, i) => (
+              <PersonCard key={`${member.name}${i}`} member={member} />
             ))}
           </PersonCards>
         </section>

@@ -35,8 +35,8 @@ const Img = styled.img`
 export const PersonCard = ({member}) => {
   const src = member.profile_path ? `${IMG_URL_W200}${member.profile_path}` : NoHeadshot
   return (
-    <Person key={member.name}>
-      <Img src={src} />
+    <Person>
+      <Img src={src} alt="Photo of person" />
       <div style={{padding: '0 30px'}}>
         <h3 style={{margin: '10px 0 0 0'}}>{member.name}</h3>
         { member.character &&

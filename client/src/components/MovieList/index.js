@@ -1,7 +1,6 @@
 import React, { useEffect, useReducer } from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import useSWR, { SWRConfig }from 'swr'
+import useSWR from 'swr'
 import { joinQuery  } from 'utils/helpers'
 import { FlashError } from 'components/Error/FlashMessage'
 
@@ -66,8 +65,10 @@ export const MovieList = ({ requestUrl = '/api/movie/popular' }) => {
     }
   }, [movies])
 
-  if(error || movies && movies.status_code) {
+  if(movies && movies.status_code) {
     return <FlashError message={movies} error={error} />
+  } else if (error) {
+    return <FlashError error={error} />
   }
 
   if(state.moviesList.length === 0) {

@@ -1,4 +1,4 @@
-import React, { useState, Suspense, useRef, useEffect } from 'react'
+import React, { useState, Suspense } from 'react'
 import styled from 'styled-components'
 
 import { SearchBar } from 'components/SearchBar'
@@ -13,7 +13,6 @@ const HomeWrap = styled.div`
   align-items: center;
 `
 const Home = () => {
-  const searchQuery = useState('');
   const [search, setSearch] = useState('')
   const requestUrl = search ? `/api/search/movie?query=${encodeURIComponent(search)}` : '/api/movie/popular'
   return (

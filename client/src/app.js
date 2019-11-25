@@ -1,6 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import useSWR, { SWRConfig, trigger }from 'swr'
+import { SWRConfig }from 'swr'
 import ErrorBoundary from 'components/Error/Boundary'
 import { fetcher } from './utils/fetcher'
 

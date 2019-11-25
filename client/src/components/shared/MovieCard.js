@@ -60,7 +60,7 @@ export const MovieCard = ({ movie }) => {
     <div key={movie.id}>
       <CardLink to={`/movie/${movie.id}`}>
         <CardImage whileHover={{ scale: 1.04 }}>
-          <img src={imgSrc} />
+          <img src={imgSrc} alt="Movie poster" />
         </CardImage>
         <h3>{movie.title}</h3>
         <div>{new Date(movie.release_date).toLocaleDateString()}</div>
