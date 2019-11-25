@@ -53,15 +53,15 @@ const MoviePage = () => {
 
       <Details
         title={movie.title}
-        tagline={movie.tagline} 
-        overview={overview} 
-        genres={genres} 
+        tagline={movie.tagline}
+        overview={overview}
+        genres={genres}
         revenue={revenue}
         budget={budget}
         release_date={release_date}
       />
 
-      { credits && credits.cast &&
+      { credits && credits.cast.length > 0 &&
         <section>
           <PersonCardsTitle>Cast</PersonCardsTitle>
           <PersonCards>
@@ -73,7 +73,7 @@ const MoviePage = () => {
       }
 
       { reviews && reviews.results.length > 0 &&
-        <section style={{marginLeft: '120px', marginBottom: '120px'}}>
+        <section style={{margin: '120px'}}>
           <h1>Review</h1>
           <div>
             <p>author: {reviews.results[0].author}</p>
@@ -83,7 +83,7 @@ const MoviePage = () => {
         </section>
       }
 
-       { credits && credits.cast &&
+       { credits && credits.crew.length > 0 &&
         <section>
           <PersonCardsTitle>Crew</PersonCardsTitle>
           <PersonCards>
@@ -94,7 +94,7 @@ const MoviePage = () => {
         </section>
       }
 
-      <section style={{minHeight: '900px', marginBottom: '80px'}}>
+      <section style={{minHeight: '900px', margin: '80'}}>
         <h1 style={{marginLeft: '120px'}}> Similar Movies </h1>
         <Suspense fallback={<Loader />}>
           <MovieList requestUrl={`/api/movie/${params.movieId}/similar`} />

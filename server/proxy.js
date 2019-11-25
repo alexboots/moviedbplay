@@ -3,6 +3,8 @@ const { MOVIE_DB_API_URL, TOKEN } = require('./constants')
 
 let lastReqTime = null
 let timeout = null
+
+// This probably isn't bulletproof
 const proxyDelay = function(req, res, next) {
   const delay = 256;
   const lastReqTimePlusDelay = lastReqTime + delay
@@ -29,6 +31,8 @@ const proxyReq = httpProxy({
   pathRewrite: function (path, req) {
     // append every request with the api key
     const appendTokenChar = path.includes('?') ? '&' : '?'
+    console.log('THIS IS THE PATH', `${path.replace('/api/', '')}${appendTokenChar}api_key=${TOKEN}`);
+    console.log('\n\n');
     return `${path.replace('/api/', '')}${appendTokenChar}api_key=${TOKEN}`
   },
   onError: function (error, req, res){

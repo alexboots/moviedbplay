@@ -47,7 +47,7 @@ const CardLink = styled(Link)`
   color: ${theme.text.default};
   text-decoration: none;
   text-align: center;
-  &:hover {
+  h3:hover {
     color: ${theme.text.secondary}
     text-decoration: underline;
   }
@@ -59,12 +59,12 @@ export const MovieCard = ({ movie }) => {
   return(
     <div key={movie.id}>
       <CardLink to={`/movie/${movie.id}`}>
-        <CardImage whileHover={{ scale: 1.09 }}>
+        <CardImage whileHover={{ scale: 1.04 }}>
           <img src={imgSrc} />
         </CardImage>
         <h3>{movie.title}</h3>
+        <div>{new Date(movie.release_date).toLocaleDateString()}</div>
       </CardLink>
-      <div>Released on {new Date(movie.release_date).toLocaleDateString()}</div>
     </div>
   )
 }

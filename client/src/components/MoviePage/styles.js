@@ -14,7 +14,7 @@ export const BackButton = styled.div`
   font-size: 18px;
   border-radius: 4px;
   text-decoration: none;
-  background: ${theme.color.white};
+  background: ${theme.bg.default};
   height: 20px;
   width: 46px;
   padding: 8px;
@@ -24,6 +24,7 @@ export const BackButton = styled.div`
   opacity: .6;
   text-align: center;
   transition: opacity 0.3s;
+  position: absolute;
   &:active{
     color: #333;
   }

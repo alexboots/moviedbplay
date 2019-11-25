@@ -7,10 +7,22 @@ import { NEXT_PAGE, PREV_PAGE } from 'components/MovieList'
 const PaginationWrap = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 18px;
 `
 const Button = styled.button`
+  background: ${theme.space.alt};
+  borderRadius: 30px;
+  width: 150px;
+  padding: 10px 20px;
+  margin: auto;
+  color: ${theme.text.reverse};
+  border-radius: 30px;
+  padding: 10px;
+  outline: none;
+  border: none;
   cursor: pointer;
+  margin: 18px;
 `
 const PageNumber = styled.div`
   background: ${theme.brand.wash};
@@ -23,7 +35,7 @@ const PageNumber = styled.div`
 `
 
 const Spacer = styled.div`
-  width: 80px;
+  width: 150px;
 `
 
 export const Pagination = ({ dispatch, totalPages, currentPage }) => (

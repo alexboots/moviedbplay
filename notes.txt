@@ -1,29 +1,34 @@
 TODO:
 
+[] Give hover on homepage cards a 'get bigger' effect for the images
+[] Add arrow to left / right of that other movies one but dont have them be clickable - idk maybe just use same card as on homepage for this as well - that would propelry show good reusablity 
+
+
 Basic app:
-[] add basic theme
-[] add react router
-  [] add basic routes
-    [] /
-    [] /movie/:page
+[✔] add basic theme
+[✔] add react router
+  [✔] add basic routes
+    [✔] /
+    [✔] /movie/:page
     [] add burger menu at the side with all routes (home / lol nothing else I guess)
-[] create list item section
-  [] create movie list item
+[✔] create list item section
+  [✔] create movie list item
   [] create card item
-[] add popular section on homepage
-  [] add popular API
-[] Add search bar
-[] Search bar
-  => search resp
-  => replaces 'popular section'
-  => obviously trnasitionar load state to its obvius UI is being replaced
-  => Maybe have 'Popular' scroll 'up' off the page (in that section) and replace it with 'Search'
-    => almost like IOs scroll select input UI sort of vibe kinda sorta
-[] 'toggle' view from list to card view
-  [] make card view for homepage
   [] not to self: make sure images set height and witdh to no weird resizing issue on loading
+[✔] add popular section on homepage
+  [✔] add popular API
+[✔] Add search bar
+  [] style searchbar
+[✔] Search bar
+  ✔ => search resp
+  ✔ => replaces 'popular section'
+  ✔ => obviously trnasitionar load state to its obvius UI is being replaced
+   => Maybe have 'Popular' header scroll 'up' off the page (in that section) and replace it with 'Search'
+    => almost like IOs scroll select input UI sort of vibe kinda sorta
 
 Probably don't have time stretch goals:
+[] 'toggle' view from list to card view
+  [] make card view for homepage
 [] add infinite scroll w react-virtualized for loading more (homepage / wherever)
   => actually maybe use this for sake of simplicity https://github.com/CassetteRocks/react-infinite-scroller
   https://github.com/jaredpalmer/react-simple-infinite-scroll
@@ -33,7 +38,7 @@ Probably don't have time stretch goals:
 [] Add filtering by genre to search - maybe a select / options OR radio input under the search bar with 'name, genre, whatever else'
 [] Show related movies
 [] Add a page for individual actor details
-[] Add a caching layer for your requests to the 3rd party API (not super needed if we throttle req + useSWR on frontend)
+[✔] Add a caching layer for your requests to the 3rd party API (not super needed if we throttle req + useSWR on frontend)
 
 
 Libs:

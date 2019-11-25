@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import FlashMessage from 'react-flash-message'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
@@ -32,12 +33,20 @@ export const FlashError = ({message, error}) => (
       <h4>
         Something went wrong :(
       </h4>
-      <div>
-        Message: {message.status_message} Status Code: {message.status_code}
-      </div>
+      { message && message.status_message &&
+        <div>
+          Message: {message.status_message} Status Code: {message.status_code}
+        </div>
+      }
       <div>
         {error}
       </div>
     </ErrorBanner>
   </FlashMessage>
 )
+
+
+ErrorBanner.propTypes = {
+  message: PropTypes.string,
+  error: PropTypes.string,
+}
