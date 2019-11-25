@@ -31,8 +31,6 @@ const proxyReq = httpProxy({
   pathRewrite: function (path, req) {
     // append every request with the api key
     const appendTokenChar = path.includes('?') ? '&' : '?'
-    console.log('THIS IS THE PATH', `${path.replace('/api/', '')}${appendTokenChar}api_key=${TOKEN}`);
-    console.log('\n\n');
     return `${path.replace('/api/', '')}${appendTokenChar}api_key=${TOKEN}`
   },
   onError: function (error, req, res){
