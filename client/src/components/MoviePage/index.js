@@ -87,7 +87,7 @@ const MoviePage = () => {
         </section>
       }
 
-      <section style={{minHeight: '900px', margin: '80px 80px 80px 120px'}}>
+      <section style={{minHeight: '900px', margin: '80px'}}>
         <h1> Similar Movies </h1>
         <Suspense fallback={<Loader />}>
           <MovieList requestUrl={`/api/movie/${params.movieId}/similar`} />
