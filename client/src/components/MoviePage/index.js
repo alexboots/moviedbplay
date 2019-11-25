@@ -71,7 +71,7 @@ const MoviePage = () => {
           <div>
             <p>author: {reviews.results[0].author}</p>
             <p>author: {reviews.results[0].content}</p>
-            <a href="https://www.themoviedb.org/review/50b3c30e760ee30df500021c">Read review</a>
+            <a href={reviews.results[0].url}>Read review</a>
           </div>
         </section>
       }
