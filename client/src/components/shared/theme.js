@@ -1,4 +1,4 @@
-// colours lifted from spectrum :P https://github.com/withspectrum/spectrum/blob/alpha/shared/theme/index.js
+// colours lifted from spectrum :P https://github.com/withspectrum/spectrum/blob/alpha/components/shared/theme/index.js
 export const theme = {
   bg: {
     default: '#FFFFFF'
@@ -7,7 +7,6 @@ export const theme = {
     default: '#4400CC',
     wash: '#E8E5FF',
     dark: '#2A0080',
-    wash: '#E8E5FF'
   },
   generic: {
     alt: '#F6FBFC'

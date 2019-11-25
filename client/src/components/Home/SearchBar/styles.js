@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import theme from 'theme'
+import theme from 'components/shared/theme'
 
 export const Search = styled.div`
   display: flex;

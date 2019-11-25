@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from "framer-motion"
-import theme from 'theme'
+import theme from 'components/shared/theme'
 
 export const Loader = () => (
   <motion.div

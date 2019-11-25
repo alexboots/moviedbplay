@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import theme from 'theme'
+import theme from 'components/shared/theme'
 
 export const BannerImg = styled.img`
   height: 100vh;

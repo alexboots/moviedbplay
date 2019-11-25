@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import theme from 'theme'
+import theme from 'components/shared/theme'
 import { IMG_URL_W200  } from 'utils/constants'
 import NoPoster from './NoPoster.png'
 

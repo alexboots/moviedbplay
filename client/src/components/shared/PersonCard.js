@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import theme from 'theme'
+import theme from 'components/shared/theme'
 import { IMG_URL_W200 } from 'utils/constants'
 import NoHeadshot from './NoHeadshot.png'
 

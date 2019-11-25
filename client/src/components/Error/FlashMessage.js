@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import FlashMessage from 'react-flash-message'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import theme from 'theme'
+import theme from 'components/shared/theme'
 
 const ErrorBanner = styled(motion.div)`
   position: absolute;
