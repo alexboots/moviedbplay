@@ -20,7 +20,7 @@ const DetailsSection = styled.section`
   background: ${theme.bg.default};
   position: relative;
   width: 70%;
-  height: 130px;
+  min-height: 130px;
   margin-left: 10%;
   margin-top: -110px;
   border-radius: 18px;
