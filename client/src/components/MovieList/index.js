@@ -84,7 +84,7 @@ export const MovieList = ({ requestUrl = '/api/movie/popular' }) => {
       />
 
       <MovieCardGrid>
-        { state.moviesList.map(movie => <MovieCard key={movie.title} movie={ movie } /> )}
+        { state.moviesList.map((movie, i) => <MovieCard key={`${movie.title}${i}${movie.id}`} movie={ movie } /> )}
       </MovieCardGrid>
 
       <Pagination
