@@ -2,7 +2,7 @@ import React, { useState, Suspense } from 'react'
 import styled from 'styled-components'
 
 import { SearchBar } from 'components/SearchBar'
-import { MovieList } from 'components/MovieList'
+import { MovieList } from 'components/shared/MovieList'
 import { Loader } from 'components/shared/Loader'
 
 const HomeWrap = styled.div`

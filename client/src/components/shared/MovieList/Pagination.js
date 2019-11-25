@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import theme from 'theme'
-import { NEXT_PAGE, PREV_PAGE } from 'components/MovieList'
+import { NEXT_PAGE, PREV_PAGE } from 'components/shared/MovieList'
 
 const PaginationWrap = styled.div`
   display: flex;

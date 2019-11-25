@@ -2,7 +2,7 @@ import React, { Suspense } from 'react'
 import useSWR from 'swr'
 import { useParams, Link } from 'react-router-dom'
 import { FlashError } from 'components/Error/FlashMessage'
-import { MovieList } from 'components/MovieList'
+import { MovieList } from 'components/shared/MovieList'
 import { Loader } from 'components/shared/Loader'
 import { IMG_URL_ORIGINAL } from 'utils/constants'
 

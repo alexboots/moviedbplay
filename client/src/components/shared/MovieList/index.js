@@ -5,7 +5,7 @@ import { joinQuery  } from 'utils/helpers'
 import { FlashError } from 'components/Error/FlashMessage'
 
 import { Pagination } from './Pagination'
-import { MovieCardGrid, MovieCard } from 'components/shared/MovieCard'
+import { MovieCardGrid, MovieCard } from './MovieCard'
 
 export const NEXT_PAGE = 'NEXT_PAGE'
 export const PREV_PAGE = 'PREV_PAGE'
