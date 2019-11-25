@@ -58,8 +58,8 @@ const MoviePage = () => {
         <section>
           <PersonCardsTitle>Cast</PersonCardsTitle>
           <PersonCards>
-            {credits.cast.map(member => (
-              <PersonCard key={member.name} member={member} />
+            {credits.cast.map((member, i) => (
+              <PersonCard key={`${i}${member.name}`} member={member} />
             ))}
           </PersonCards>
         </section>
