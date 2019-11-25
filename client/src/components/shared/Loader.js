@@ -15,15 +15,12 @@ export const Loader = () => (
     }}
 
     style={{
-      position: 'absolute',
+      margin: '0 auto',
+      marginTop: '16vh',
       background: `${theme.success.default}`,
       borderRadius: '30px',
       width: '80px',
       height: '80px',
-      top: '400px',
-      margin: '0 auto',
-      left: 0,
-      right: 0,
     }}
   />
 )

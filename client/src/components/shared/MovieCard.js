@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import theme from 'theme'
 import { IMG_URL_W200  } from 'utils/constants'
+import NoPoster from './NoPoster.png'
 
 export const MovieCardTitle = styled.h1`
   padding: 0px 0 30px 80px;
 `
-
 export const MovieCardGrid = styled.div`
   display: grid;
   grid-gap: 10px;
@@ -30,12 +30,6 @@ export const MovieCardGrid = styled.div`
     grid-template-columns: repeat(2, 1fr);
   }
 `
-const Card = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: border-radius 0.3s;
-`
 
 const CardImage = styled(motion.div)`
   margin-bottom: 18px;
@@ -48,24 +42,33 @@ const CardImage = styled(motion.div)`
     border-radius: 30px;
   }
 `
+
+const CardLink = styled(Link)`
+  color: ${theme.text.default};
+  text-decoration: none;
+  text-align: center;
+  &:hover {
+    color: ${theme.text.secondary}
+    text-decoration: underline;
+  }
+`;
+
 export const MovieCard = ({ movie }) => {
-  const imgSrc = movie.poster_path ?
-    `${IMG_URL_W200}${movie.poster_path}` :
-    'https://imgplaceholder.com/152x220?text=No+poster&font-family=Roboto'
+  const imgSrc = movie.poster_path ? `${IMG_URL_W200}${movie.poster_path}` : NoPoster
 
   return(
-    <Card key={movie.title}>
-      <Link to={`/movie/${movie.id}`} style={{textAlign: 'center'}}>
+    <div key={movie.id}>
+      <CardLink to={`/movie/${movie.id}`}>
         <CardImage whileHover={{ scale: 1.09 }}>
           <img src={imgSrc} />
         </CardImage>
         <h3>{movie.title}</h3>
-      </Link>
+      </CardLink>
       <div>Released on {new Date(movie.release_date).toLocaleDateString()}</div>
-    </Card>
+    </div>
   )
 }
 
- MovieCard.propTypes = {
-  movie: PropTypes.array.isRequired,
+MovieCard.propTypes = {
+  movie: PropTypes.object.isRequired,
 }
