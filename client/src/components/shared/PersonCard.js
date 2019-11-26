@@ -26,7 +26,7 @@ export const PersonCards = styled.section`
 `
 
 const Img = styled.img`
-  borderRadius: 6px;
+  border-radius: 6px;
   height: 300px;
   width: 200px;
 `
