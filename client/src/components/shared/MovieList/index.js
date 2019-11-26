@@ -38,12 +38,12 @@ function reducer(state, action) {
         query: `${state.query}${joinParam}page=${state.page - 1}`
       }
     case RECEIVED_NEW_QUERY:
-      return {...state, query: action.payload, page: 1 }
+      return {...state, query: action.requestUrl, page: 1 }
     case RECEIVED_NEW_MOVIES:
       return {
         ...state,
-        moviesList: [...action.payload.results],
-        totalPages: action.payload.total_pages,
+        moviesList: [...action.movies.results],
+        totalPages: action.movies.total_pages,
       }
     default:
       return state
@@ -56,12 +56,12 @@ export const MovieList = ({ requestUrl = '/api/movie/popular' }) => {
   const { data: movies, error } = useSWR(state.query)
 
   useEffect(() => {
-    dispatch({ type: RECEIVED_NEW_QUERY, payload: requestUrl })
+    dispatch({ type: RECEIVED_NEW_QUERY, requestUrl })
   }, [requestUrl])
 
   useEffect(() => {
     if(movies && movies.results) {
-      dispatch({ type: RECEIVED_NEW_MOVIES, payload: movies })
+      dispatch({ type: RECEIVED_NEW_MOVIES, movies })
     }
   }, [movies])
 

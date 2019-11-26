@@ -12,6 +12,7 @@ const HomeWrap = styled.div`
   justify-content: center;
   align-items: center;
 `
+
 const Home = () => {
   const [search, setSearch] = useState('')
   const requestUrl = search ? `/api/search/movie?query=${encodeURIComponent(search)}` : '/api/movie/popular'

@@ -6,6 +6,7 @@ export const Search = styled.div`
   align-items: center;
   justify-content: center;
 `
+
 export const Input = styled.input`
   width: 300px;
   height: 60px;
@@ -26,6 +27,7 @@ export const ClearWrapper = styled.div`
   left: -80px;
   margin-right: -40px;
 `
+
 export const Clear = styled.span`
   height: 30px;
   color: ${theme.text.default};
