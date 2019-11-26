@@ -10,14 +10,18 @@ import NoHeadshot from './NoHeadshot.png'
 `
  export const Person = styled.div`
   background-color: ${theme.bg.default};
-  min-width: 200px;
+  width: 200px;
   margin: 5px;
   border-radius: 18px;
+  padding-bottom: 20px;
   :first-child {
-    padding-left: 120px;
+    margin-left: 120px;
   }
   :last-child {
-    padding-right: 320px;
+    :after {
+    content: "";
+      padding-right: 320px;
+    }
   }
 `
 export const PersonCards = styled.section`

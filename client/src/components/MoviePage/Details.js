@@ -16,7 +16,7 @@ const Title = styled.header`
   }
 `
 
-const DetailsSection = styled.section`
+const DetailsOverview = styled.section`
   background: ${theme.bg.default};
   position: relative;
   width: 70%;
@@ -33,7 +33,7 @@ const DetailsSection = styled.section`
   }
 `
 
-const DetailsMain = styled.section`
+const DetailsInfo = styled.section`
   padding: 0 120px;
   margin-top: -20px;
   position: relative;
@@ -74,7 +74,7 @@ const DivPill = styled.div`
 `
 export const Details = ({title, tagline, overview, genres, revenue, budget, release_date}) => (
   <>
-    <DetailsSection key={`${release_date}${revenue}`}>
+    <DetailsOverview key={`${release_date}${revenue}`}>
       <Title>
         <h1>{title}</h1>
         <h3>{tagline}</h3>
@@ -82,8 +82,8 @@ export const Details = ({title, tagline, overview, genres, revenue, budget, rele
       <div>
         {overview}
       </div>
-    </DetailsSection>
-    <DetailsMain>
+    </DetailsOverview>
+    <DetailsInfo>
         <div>
           <h4>Genres</h4>
           <UlPill>
@@ -110,15 +110,15 @@ export const Details = ({title, tagline, overview, genres, revenue, budget, rele
             {new Date(release_date).toLocaleDateString()}
           </DivPill>
         </div>
-    </DetailsMain>
+    </DetailsInfo>
   </>
 )
 
-DetailsSection.propTypes = {
+Details.propTypes = {
   tagline: PropTypes.string,
   genres: PropTypes.array,
-  revenue: PropTypes.string,
-  budget: PropTypes.string,
+  revenue: PropTypes.number,
+  budget: PropTypes.number,
   release_date: PropTypes.string,
   overview: PropTypes.string,
 }
