@@ -35,7 +35,7 @@ const PageNumber = styled.div`
 `
 
 const Spacer = styled.div`
-  width: 150px;
+  width: 180px;
 `
 
 export const Pagination = ({ dispatch, totalPages, currentPage }) => (

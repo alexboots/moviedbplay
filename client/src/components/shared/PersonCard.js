@@ -13,6 +13,12 @@ import NoHeadshot from './NoHeadshot.png'
   min-width: 200px;
   margin: 5px;
   border-radius: 18px;
+  :first-child {
+    padding-left: 120px;
+  }
+  :last-child {
+    padding-right: 320px;
+  }
 `
 export const PersonCards = styled.section`
   min-height: 200px;
@@ -21,7 +27,6 @@ export const PersonCards = styled.section`
 
   overflow-x: auto;
   padding: 30px;
-  padding-left: 120px;
   margin-bottom: 120px;
 `
 

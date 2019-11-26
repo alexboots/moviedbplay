@@ -7,9 +7,6 @@ import theme from 'components/shared/theme'
 import { IMG_URL_W200  } from 'utils/constants'
 import NoPoster from './NoPoster.png'
 
-export const MovieCardTitle = styled.h1`
-  padding: 0px 0 30px 80px;
-`
 export const MovieCardGrid = styled.div`
   display: grid;
   grid-gap: 10px;
